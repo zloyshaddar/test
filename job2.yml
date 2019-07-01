@@ -1,0 +1,18 @@
+resources:
+- name: git-repo
+  type: git
+  source:
+    uri: https://github.com/zloyshaddar/test.git
+    branch: master
+    
+jobs:
+- name: deploy
+  plan:
+  - get: git-repo
+  - task: apply-deployment
+    inputs:
+    - name: git-repo
+    run:
+      path: /usr/local/bin/kubectl
+      args:
+      - apply -f git-repo/deploy.yaml
