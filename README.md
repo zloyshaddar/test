@@ -6,7 +6,7 @@ set KOPS_STATE_STORE=s3://shaddar-kops
 ```
 ### Create Route 53 hosted zone via web cosole with parameters:
 ```
-Domain Name: cluster.shaddar.local
+Domain Name: cluster.k8s.local
 Type: Private Hosted Zone for Amazon VPC
 Associated VPC: vpc-429feb29 | eu-central-1
 ```
