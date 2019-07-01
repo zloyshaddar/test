@@ -1,4 +1,4 @@
-### Kops pre-installation actions:
+### Kops pre-configuration actions:
 ```
 aws s3api create-bucket --bucket shaddar-kops --create-bucket-configuration LocationConstraint=eu-central-1 --acl "private"
 kops create secret --name cluster.k8s.local sshpublickey admin -i E:\work\keys\shaddar.ssh-rsa.pub
