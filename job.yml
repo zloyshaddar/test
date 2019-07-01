@@ -1,0 +1,21 @@
+resources:
+- name: git-repo
+  type: git
+  source:
+    uri: https://github.com/zloyshaddar/test.git
+    branch: master
+    
+- name: ecr-docker-reg
+  type: docker-image
+  source:
+    aws_access_key_id: [aws_access_key_id]
+    aws_secret_access_key: [aws_secret_access_key]
+    repository: 488666820772.dkr.ecr.eu-central-1.amazonaws.com/test
+  
+jobs:
+- name: push
+  plan:
+  - get: git-repo
+  - put: ecr-docker-reg
+    params:
+      build: git-repo/Dockerfile
