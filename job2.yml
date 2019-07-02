@@ -12,9 +12,9 @@ resources:
     uri: https://github.com/zloyshaddar/test.git
     branch: master
 - name: k8s
-    type: kubernetes
-    source:
-      kubeconfig: cluster.k8s.local
+  type: kubernetes
+  source:
+    kubeconfig: cluster.k8s.local
     
 jobs:
 - name: deploy
