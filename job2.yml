@@ -9,10 +9,6 @@ jobs:
 - name: deploy
   plan:
   - get: git-repo
-  - task: apply-deployment
-    inputs:
-    - name: git-repo
-    run:
-      path: /usr/local/bin/kubectl
-      args:
-      - apply -f git-repo/deploy.yaml
+  - put: k8s
+    params:
+      kubectl: apply -f git-repo/deploy.yaml
